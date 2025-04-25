@@ -15,6 +15,9 @@ double findSquareArea();
 double findCircleArea();
 double findRTriangleArea();
 int getChoice(int min, int max);
+void square();
+void circle();
+void rtriangle();
 
 int main() {
     displayMenu();
@@ -31,10 +34,13 @@ void displayMenu() {
         cout << endl << right << setw(82) << "-------------------------------------------------";
         choice = getChoice(1, 4);
         if (choice == 1) {
+            square();
             cout << "\nArea: " << fixed << setprecision(1) << findSquareArea() << "cm^2 " << endl;
         } else if (choice == 2) {
+            circle();
             cout << "\nArea: " << fixed << setprecision(4) << findCircleArea() << "cm^2 " << endl;
         } else if (choice == 3) {
+            rtriangle();
             cout << "\nArea: " << fixed << setprecision(1) << findRTriangleArea() << "cm^2 " << endl;
         } else {
             for (int i = 0; i < 3; i++) {
@@ -44,32 +50,38 @@ void displayMenu() {
     }
 }
 
-double findSquareArea() {
+void square() {
     // Users' will prompt the value of the side in cm
     cout << "\nEnter the side of the square: ";
     cin >> side;
     AREAsquare = pow(side, 2); // Computes the area of the square
-    // Displays the final output for the square
-    return AREAsquare;
 }
 
-double findCircleArea() {
+void circle() {
     // Users' will prompt the value of the radius in cm
     cout << "\nEnter the radius of the circle: ";
     cin >> radius;
     AREAcircle = PI_VAL * (pow(radius, 2)); // Computes the area of the circle
-    // Displays the final output for the circle
-    return AREAcircle;
 }
 
-double findRTriangleArea() {
+void rtriangle() {
     // Users' will prompt the value of the base and height in cm
     cout << "\nEnter the base of the right triangle: ";
     cin >> base;
     cout << "\nEnter the height of the right triangle: ";
     cin >> height;
     AREArtriangle = 0.5 * base * height; // Computes the area of the right triangle
-    // Displays the final output for the right triangle
+}
+
+double findSquareArea() {
+    return AREAsquare;
+}
+
+double findCircleArea() {
+    return AREAcircle;
+}
+
+double findRTriangleArea() {
     return AREArtriangle;
 }
 
