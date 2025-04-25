@@ -11,13 +11,13 @@ double PI_VAL = 3.14159, side, base,
 height, radius, AREAsquare, AREAcircle, AREArtriangle;
 
 void displayMenu();
+void square();
+void circle();
+void rtriangle();
 double findSquareArea();
 double findCircleArea();
 double findRTriangleArea();
 int getChoice(int min, int max);
-void square();
-void circle();
-void rtriangle();
 
 int main() {
     displayMenu();
