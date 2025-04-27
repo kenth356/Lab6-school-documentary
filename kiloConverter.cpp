@@ -1,22 +1,73 @@
-// Lab 6 swapNums.cpp -- Using Value and Reference Parameters
-// This program uses a function to swap the values in two variables.
+// Lab 6 kiloConverter.cpp
+// This menu-driven program lets the user convert
+// pounds to kilograms and kilograms to pounds.
 // Mariano, Kenth Jarren S.
 #include <iostream>
 using namespace std;
 
-int swapNums(int &num1, int &num2);
+int choice;
+double weight, weightConverted;
+
+void displayMenu();
+void exit();
+void KGtoLB();
+void LBtoKG();
+int getChoice(int min, int max);
 
 int main() {
-    int num1 = 5, num2 = 7;
-    cout << "\nIn main the two numbers are " << num1 << " and " << num2 << endl;
-    swapNums(num1, num2);
-    cout << "\nBack in main again the two numbers are " << num1 << " and " << num2 << endl;
+    displayMenu();
+    return 0;
 }
 
-int swapNums(int &num1, int &num2) {
-    int temp = num1;
-    num1 = num2;
-    num2 = temp;
-    cout << "\nIn swapNums, after swapping, the two numbers are " << num1 << " and " << num2 << endl;
-    return num1, num2;
+void displayMenu() {
+    while (true) {
+        cout << "\n[KILO CONVERTER]";
+        cout << "\n1. Convert kilograms to pounds";
+        cout << "\n2. Convert pounds to kilograms";
+        cout << "\n3. Quit";
+        choice = getChoice(1, 4);
+        switch (choice) {
+            case 1:
+            KGtoLB();
+            break;
+            case 2:
+            LBtoKG();
+            break;
+            case 3:
+            exit();
+            return;
+            default:
+            for (int i = 0; i < 3; i++) {
+                cout << "\n[PLEASE ENTER A VALID INPUT]" << endl;
+            }
+        }
+    }
+}
+
+void KGtoLB() {
+    cout << "\n[KILOGRAMS TO POUNDS]";
+    cout << "\nEnter Weight to be converted: ";
+    cin >> weight;
+    weightConverted = weight * 2.2;
+    cout << "\nThe Weight to be converted: " << weight << "kg";
+    cout << endl << weight << " kilograms = " << weightConverted << " pounds" << endl;
+}
+
+void LBtoKG() {
+    cout << "\n[POUNDS TO KILOGRAMS]";
+    cout << "\nEnter weight to be converted: ";
+    cin >> weight;
+    weightConverted = weight / 2.2;
+    cout << "\nThe Weight to be converted: " << weight << "kg";
+    cout << endl << weight << " pounds = " << weightConverted << " kilograms" << endl;
+}
+
+void exit() {
+    cout << "\n[THANK YOU FOR USING MY PROGRAM]" << endl;
+}
+
+int getChoice(int min, int max) {
+    cout << endl << "\nEnter choice: ";
+    cin >> choice;
+    return choice;
 }
