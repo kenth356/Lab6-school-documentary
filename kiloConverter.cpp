@@ -1,69 +1,22 @@
+// Lab 6 swapNums.cpp -- Using Value and Reference Parameters
+// This program uses a function to swap the values in two variables.
+// Mariano, Kenth Jarren S.
 #include <iostream>
 using namespace std;
 
-int choice;
-double weight, weightConverted;
-
-void displayMenu();
-void exit();
-void KGtoLB();
-void LBtoKG();
-int getChoice(int min, int max);
+int swapNums(int &num1, int &num2);
 
 int main() {
-    displayMenu();
-    return 0;
+    int num1 = 5, num2 = 7;
+    cout << "\nIn main the two numbers are " << num1 << " and " << num2 << endl;
+    swapNums(num1, num2);
+    cout << "\nBack in main again the two numbers are " << num1 << " and " << num2 << endl;
 }
 
-void displayMenu() {
-    while (true) {
-        cout << "\n[KILO CONVERTER]";
-        cout << "\n1. Convert kilograms to pounds";
-        cout << "\n2. Convert pounds to kilograms";
-        cout << "\n3. Quit";
-        choice = getChoice(1, 4);
-        switch (choice) {
-            case 1:
-            KGtoLB();
-            break;
-            case 2:
-            LBtoKG();
-            break;
-            case 3:
-            exit();
-            return;
-            default:
-            for (int i = 0; i < 3; i++) {
-                cout << "\n[PLEASE ENTER A VALID INPUT]" << endl;
-            }
-        }
-    }
-}
-
-void KGtoLB() {
-    cout << "\n[KILOGRAMS TO POUNDS]";
-    cout << "\nEnter Weight to be converted: ";
-    cin >> weight;
-    weightConverted = weight * 2.2;
-    cout << "\nThe Weight to be converted: " << weight << "kg";
-    cout << endl << weight << " kilograms = " << weightConverted << " pounds" << endl;
-}
-
-void LBtoKG() {
-    cout << "\n[POUNDS TO KILOGRAMS]";
-    cout << "\nEnter weight to be converted: ";
-    cin >> weight;
-    weightConverted = weight / 2.2;
-    cout << "\nThe Weight to be converted: " << weight << "kg";
-    cout << endl << weight << " pounds = " << weightConverted << " kilograms" << endl;
-}
-
-void exit() {
-    cout << "\n[THANK YOU FOR USING MY PROGRAM]" << endl;
-}
-
-int getChoice(int min, int max) {
-    cout << endl << "\nEnter choice: ";
-    cin >> choice;
-    return choice;
+int swapNums(int &num1, int &num2) {
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+    cout << "\nIn swapNums, after swapping, the two numbers are " << num1 << " and " << num2 << endl;
+    return num1, num2;
 }
