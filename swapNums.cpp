@@ -1,3 +1,6 @@
+// Lab 6 swapNums.cpp -- Using Value and Reference Parameters
+// This program uses a function to swap the values in two variables.
+// Mariano, Kenth Jarren S.
 #include <iostream>
 using namespace std;
 
