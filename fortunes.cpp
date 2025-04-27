@@ -1,3 +1,6 @@
+// Lab 6 fortunes.cpp
+// This fortune telling program  will be modified to use a void function.
+// Mariano, Kenth Jarren S.
 #include <iostream>
 #include <cmath>
 using namespace std;
