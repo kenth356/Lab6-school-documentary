@@ -1,4 +1,4 @@
-// Lab 5 areas2.cpp
+// Lab 6 areas3.cpp
 // This program computes the area of a object of the users' choice
 // Mariano, Kenth Jarren S.
 #include <iostream>
