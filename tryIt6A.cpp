@@ -1,3 +1,5 @@
+// Lab 6 tryIt6A
+// Mariano, Kenth Jarren S. BSCPE - 1B
 #include <iostream>
 using namespace std;
 
@@ -9,14 +11,12 @@ int main() {
     cout << "\nHello from main." << endl;
     printMessage();
     cout << "\nValue returned by tripleIt is: " << tripleIt(value) << endl;
-    cout << "\nIn Main value now is: " << tripleIt(value) << endl << endl;
-
+    cout << "\nIn Main value now is: " << value << endl << endl;
     value = tripleIt(value);
     cout << "\nIn Main value now is: " << value << endl;
     value = tripleIt(value);
     cout << "\nIn Main value now is: " << value << endl << endl;
     cout << "\nGoodbye from main." << endl;
-
     return 0;
 }
 
