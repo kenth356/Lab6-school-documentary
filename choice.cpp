@@ -1,3 +1,7 @@
+// Lab 6 choice.cpp
+// This program illustrates how to use a value-returning
+// function to get, validate, and return input data.
+// Mariano, Kenth Jarren S.
 #include <iostream>
 #include <cmath>
 using namespace std;
